@@ -20,9 +20,22 @@
         </p>
     </div>
     <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl mb-8 !leading-tight font-medium"><?php the_title(); ?></h3>
-    <p class="text-xl md:text-2xl opacity-50 !leading-normal">
+    <p class="text-xl md:text-2xl opacity-50 mb-8 !leading-normal">
         <?php echo get_the_excerpt(); ?>
     </p>
+    <div>
+        <?php
+            $post_id = get_the_ID();
+            $coauthors = get_coauthors($post_id);
+            $last = end($coauthors)->ID;
+            foreach ($coauthors as $author) {
+                $authorLink = get_author_posts_url($author->ID);
+                ?>
+                <a href="<?php echo $authorLink; ?>" class="font-semibold underline text-tdarkred"><?php echo $author->display_name ?></a><?php if ($author->ID != $last) echo ", "?>
+                <?php
+            }
+        ?>
+    </div>
     <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block my-16") )?>
 </div>
 <div class="max-w-2xl mx-auto px-4 content content-drop font-garamond">
