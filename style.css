@@ -6,3 +6,75 @@
   Description: Custom template for claremontundercurrents.com, developed by Samson Zhang in fall 2023
   Version: 0.0.1
 */
+
+body {
+    font-family: "Inter Tight", sans-serif;
+}
+
+.content {
+    font-size: 18px;
+    word-break: break-word;
+  }
+  
+  @media (min-width: 768px) {
+    .content {
+      font-size: 20px;
+    }
+  }
+  
+  .content-drop > p:first-child:first-letter {
+    font-size: 3.15em;
+    line-height: 1;
+    font-weight: 700;
+    margin-right: 4px;
+    float: left;
+  }
+  
+  .content p, li {
+    line-height: 1.6;
+    margin: 1.6em 0;
+  }
+  
+  .content li {
+    padding-left: 9px;
+  }
+  
+  .content ul {
+    padding-left: 1em;
+    margin: 1.5em 0;
+    list-style: unset;
+  }
+  
+  .content h2 {
+    font-size: 2.8em;
+    font-weight: 300;
+    margin-top: 1.5em;
+    line-height: 1.2;
+  }
+  
+  .content h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 1.5em;
+    line-height: 1.2;
+  }
+  
+  .content p a, .content li a {
+    color: #2C5F93;
+    text-decoration: underline;
+  }
+  
+  .content iframe {
+    margin: 4em 0;
+  }
+  
+  .content blockquote {
+    border-left: 4px solid #2C5F93;
+    margin: 48px 0;
+    padding-left: 24px;
+  }
+  
+  .content blockquote, .content blockquote p {
+    font-size: 24px;
+    color: #2C5F93;
+  }
