@@ -700,6 +700,10 @@ video {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -711,6 +715,12 @@ video {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.italic {
+  font-style: italic;
 }
 .\!leading-normal {
   line-height: 1.5 !important;
@@ -747,6 +757,9 @@ video {
 }
 .opacity-75 {
   opacity: 0.75;
+}
+.opacity-25 {
+  opacity: 0.25;
 }
 .hover\:opacity-100:hover {
   opacity: 1;

@@ -10,7 +10,7 @@
         if ($tags) {
             foreach ($tags as $tag) {
                 ?>
-                <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase"><?php echo $tag->name; ?></p>
+                <a class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase" href="<?php echo get_tag_link($tag) ?>"><?php echo $tag->name; ?></a>
                 <?php
             }
         }
