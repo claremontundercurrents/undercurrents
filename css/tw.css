@@ -557,6 +557,9 @@ video {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.ml-6 {
+  margin-left: 1.5rem;
+}
 .block {
   display: block;
 }
@@ -724,6 +727,9 @@ video {
 }
 .opacity-75 {
   opacity: 0.75;
+}
+.hover\:opacity-100:hover {
+  opacity: 1;
 }
 @media (min-width: 640px) {
 
