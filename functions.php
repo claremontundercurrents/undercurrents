@@ -17,3 +17,8 @@ function script_enqueue()
 add_action('wp_enqueue_scripts', 'script_enqueue');
 
 add_theme_support( 'post-thumbnails' );
+
+function mytheme_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );

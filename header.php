@@ -18,11 +18,11 @@ wp_head();
             </a>
         </div>
         <div class="max-w-7xl px-4 mx-auto flex items-center h-full relative z-30">
-            <p class="font-garamond font-medium">Documenting and amplifying 5C organizing</p>
+            <p class="font-garamond font-medium hidden lg:block">Documenting and amplifying 5C organizing</p>
             <div class="flex items-center h-full ml-auto">
-                <a href="" class="ml-8 opacity-50 font-medium text-sm">About Us</a>
-                <a href="" class="ml-8 opacity-50 font-medium text-sm">Editorial standards</a>
-                <a href="" class="ml-8 rounded font-bold tracking-[2px] text-white text-xs px-4 py-3 bg-tred uppercase">Join Us</a>
+                <a href="" class="ml-8 opacity-50 font-medium text-sm hidden lg:block">About Us</a>
+                <a href="" class="ml-8 opacity-50 font-medium text-sm hidden lg:block">Editorial standards</a>
+                <a href="" class="ml-8 rounded font-bold tracking-[2px] text-white text-xs px-4 py-3 bg-tred uppercase hidden sm:block">Join Us</a>
             </div>
         </div>
     </div>
