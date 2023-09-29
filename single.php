@@ -4,9 +4,21 @@
     <div class="absolute -left-8 -top-40 w-48 pointer-events-none">
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
     </div>
-    <p class="text-xs font-medium opacity-50 mb-8">
-        <?php echo the_date("F j, Y"); ?>
-    </p>
+    <div class="flex items-center mb-8">
+        <?php
+        $tags = get_the_tags();
+        if ($tags) {
+            foreach ($tags as $tag) {
+                ?>
+                <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase"><?php echo $tag->name; ?></p>
+                <?php
+            }
+        }
+        ?>
+        <p class="font-medium opacity-50">
+            <?php echo the_date("F j, Y"); ?>
+        </p>
+    </div>
     <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl mb-8 !leading-tight font-medium"><?php the_title(); ?></h3>
     <p class="text-xl md:text-2xl opacity-50 !leading-normal">
         <?php echo get_the_excerpt(); ?>

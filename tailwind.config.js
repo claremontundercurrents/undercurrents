@@ -8,6 +8,7 @@ module.exports = {
       extend: {
         "colors": {
             "tred": "red",
+            "tdarkred": "#D12229",
         },
       },
     },
