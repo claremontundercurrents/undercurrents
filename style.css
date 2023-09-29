@@ -32,6 +32,7 @@ body {
     font-weight: 700;
     margin-right: 4px;
     float: left;
+    color: red;
   }
   
   .content p, li {

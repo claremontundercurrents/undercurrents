@@ -3,10 +3,10 @@
     <div class="absolute -left-8 -top-40 w-48 pointer-events-none">
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
     </div>
-    <div class="lg:w-2/3">
-        <p class="font-garamond font-medium text-3xl sm:text-4xl md:text-5xl !leading-tight hero-text">Undercurrents reports on <a><i>labor</i></a>, <a><i>Palestine liberation</i></a>, <a><i>prison abolition</i></a>, <a><i>tenants’ rights</i></a> and other community organizing at and around the Claremont Colleges.</p>
+    <div class="lg:w-[70%]">
+        <p class="font-garamond font-medium text-3xl sm:text-4xl md:text-[45px] !leading-tight hero-text">Undercurrents reports on <a><i>labor</i></a>, <a><i>Palestine liberation</i></a>, <a><i>prison abolition</i></a>, <a><i>tenants’ rights</i></a> and other community organizing at and around the Claremont Colleges.</p>
     </div>
-    <div class="lg:w-1/3">
+    <div class="lg:w-[30%] flex-shrink-0">
 
     </div>
 </div>
