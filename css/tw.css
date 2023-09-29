@@ -667,6 +667,12 @@ video {
 .pr-4 {
   padding-right: 1rem;
 }
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.text-center {
+  text-align: center;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -689,6 +695,10 @@ video {
 }
 .text-\[10px\] {
   font-size: 10px;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 .font-bold {
   font-weight: 700;
