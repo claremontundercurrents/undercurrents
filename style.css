@@ -11,6 +11,10 @@ body {
     font-family: "Inter Tight", sans-serif;
 }
 
+.font-garamond {
+    font-family: "EB Garamond", serif;
+}
+
 .content {
     font-size: 18px;
     word-break: break-word;
