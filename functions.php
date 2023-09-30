@@ -22,3 +22,33 @@ function mytheme_custom_excerpt_length( $length ) {
     return 20;
 }
 add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );
+
+function theme_add_menus()
+{
+    add_theme_support('menus');
+    register_nav_menus(array(
+        'header' => __('Header top items'),
+        'cats' => __('Header category list'),
+        'footer' => __('Footer items'),
+        'hero' => __('Hero text items')
+    ));
+}
+
+add_action('init', 'theme_add_menus');
+
+# from https://wordpress.stackexchange.com/questions/237044/wp-get-nav-menu-items-not-working-with-slug
+function get_menu_items_by_registered_slug($menu_slug) {
+
+    $menu_items = array();
+
+    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_slug ] ) ) {
+        $menu = get_term( $locations[ $menu_slug ] );
+
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+
+    }
+
+    return $menu_items;
+
+}

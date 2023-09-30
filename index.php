@@ -4,7 +4,18 @@
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
     </div>
     <div class="lg:w-[60%] pr-4">
-        <p class="font-garamond font-medium text-3xl sm:text-4xl md:text-[45px] !leading-tight hero-text">Undercurrents reports on <a><i>labor</i></a>, <a><i>Palestine liberation</i></a>, <a><i>prison abolition</i></a>, <a><i>tenants’ rights</i></a> and other community organizing at and around the Claremont Colleges.</p>
+        <p class="font-garamond font-medium text-3xl sm:text-4xl md:text-[45px] !leading-tight hero-text">
+            Undercurrents reports on 
+                <?php
+                $heromenu = get_menu_items_by_registered_slug("hero");
+                $lasttitle = end($heromenu)->title;
+                foreach ($heromenu as $item) {
+                    ?>
+                        <a href="<?php echo $item->url?>"><i><?php echo $item->title?></i></a><?php if ($item->title != $lasttitle): ?><span>, </span><?php endif; ?>
+                    <?php    
+                }
+                ?>and other community organizing at and around the Claremont Colleges.
+        </p>
     </div>
     <div class="lg:w-[40%] flex-shrink-0 flex items-center max-w-md mx-auto relative mt-8 lg:mt-0">
         <div class="absolute top-0 left-1/4 w-3/4 bg-tdark h-full" id="issue-promo-back"></div>

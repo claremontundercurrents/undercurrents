@@ -6,11 +6,28 @@
     <div class="max-w-4xl lg:max-w-7xl px-4 mx-auto lg:flex relative">
         <div class="lg:w-[60%] pr-4 py-16 lg:py-32 text-center lg:text-left">
             <img src="<?php echo get_template_directory_uri() . "/img/square-logo.png" ?>" alt="" class="w-16 mb-8 block rounded mx-auto lg:mx-0">
-            <p class="font-garamond font-medium text-3xl sm:text-4xl md:text-[45px] !leading-tight hero-text hero-text-light">Undercurrents reports on <a><i>labor</i></a>, <a><i>Palestine liberation</i></a>, <a><i>prison abolition</i></a>, <a><i>tenants’ rights</i></a> and other community organizing at and around the Claremont Colleges.</p>
+            <p class="font-garamond font-medium text-3xl sm:text-4xl md:text-[45px] !leading-tight hero-text hero-text-light">
+                Undercurrents reports on 
+                <?php
+                $heromenu = get_menu_items_by_registered_slug("hero");
+                $lasttitle = end($heromenu)->title;
+                foreach ($heromenu as $item) {
+                    ?>
+                        <a href="<?php echo $item->url?>"><i><?php echo $item->title?></i></a><?php if ($item->title != $lasttitle): ?><span>, </span><?php endif; ?>
+                    <?php    
+                }
+                ?>and other community organizing at and around the Claremont Colleges.
+            </p>
             <div class="flex justify-center lg:justify-start items-center mt-12">
-                <a href="" class="text-white opacity-50 hover:opacity-100 mr-8 whitespace-nowrap">About us</a>
-                <a href="" class="text-white opacity-50 hover:opacity-100 mr-8 whitespace-nowrap">Editorial standards</a>
-                <a href="" class="text-white opacity-50 hover:opacity-100 lg:mr-8 whitespace-nowrap">Join us</a>
+                <?php
+                    $footermenu = get_menu_items_by_registered_slug("footer");
+                    $lasttitle = end($footermenu)->title;
+                    foreach ($footermenu as $item) {
+                        ?>
+                        <a href="<?php echo $item->url?>" class="text-white opacity-50 hover:opacity-100 <?php if ($item->title == $lasttitle) {echo "lg:mr-8";} else {echo "mr-8";}?> whitespace-nowrap"><?php echo $item->title?></a>
+                        <?php
+                    }
+                ?>
             </div>
         </div>
         <div class="lg:w-[40%] flex-shrink-0 flex items-center max-w-md mx-auto relative mt-8 lg:mt-0">

@@ -20,17 +20,25 @@ wp_head();
         <div class="max-w-7xl px-4 mx-auto flex items-center h-full relative z-30">
             <p class="font-garamond font-medium hidden lg:block">Documenting and amplifying 5C organizing</p>
             <div class="flex items-center h-full ml-auto">
-                <a href="" class="ml-6 opacity-50 hover:opacity-100 font-medium text-sm hidden lg:block">About</a>
-                <a href="" class="ml-6 opacity-50 hover:opacity-100 font-medium text-sm hidden lg:block">Standards</a>
-                <a href="" class="ml-6 opacity-50 hover:opacity-100 font-medium text-sm hidden lg:block">Join</a>
+                <?php
+                $topmenu = get_menu_items_by_registered_slug("header");
+                foreach ($topmenu as $item) {
+                    ?>
+                        <a href="<?php echo $item->url?>" class="ml-6 opacity-50 hover:opacity-100 font-medium text-sm hidden lg:block"><?php echo $item->title?></a>
+                    <?php
+                }
+                ?>
                 <a href="" class="ml-6 rounded font-bold tracking-[1px] text-white text-xs px-4 py-3 bg-tred uppercase hidden sm:block">Get Issue 1</a>
             </div>
         </div>
     </div>
     <div class="w-full flex items-center justify-center h-12">
-        <a href="" class="mx-4 opacity-50 hover:opacity-100 text-sm">Labor</a>
-        <a href="" class="mx-4 opacity-50 hover:opacity-100 text-sm">Palestine</a>
-        <a href="" class="mx-4 opacity-50 hover:opacity-100 text-sm">Abolition</a>
-        <a href="" class="mx-4 opacity-50 hover:opacity-100 text-sm">Commentary</a>
-        <a href="" class="mx-4 opacity-50 hover:opacity-100 text-sm">Print</a>
+        <?php
+        $catmenu = get_menu_items_by_registered_slug("cats");
+        foreach ($catmenu as $item) {
+            ?>
+                <a href="<?php echo $item->url?>" class="mx-4 opacity-50 hover:opacity-100 text-sm"><?php echo $item->title ?></a>
+            <?php
+        }
+        ?>
     </div>
