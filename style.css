@@ -85,6 +85,14 @@ body {
     font-family: "Inter Tight", sans-serif;
   }
 
+  .content figcaption {
+    text-align: center;
+    opacity: 0.5;
+    margin-top: 8px;
+    font-family: "Inter Tight", sans-serif;
+    font-size: 12px;
+  }
+
 .hero-text:not(.hero-text-light) {
     color: #999999;
 }

@@ -83,3 +83,11 @@ blockquote p {
     font-size: 28px;
     font-family: "Inter Tight", sans-serif;
 }
+
+figcaption {
+    text-align: center;
+    opacity: 0.5;
+    margin-top: 8px;
+    font-family: "Inter Tight", sans-serif;
+    font-size: 12px;
+}
