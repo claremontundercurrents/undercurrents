@@ -52,3 +52,13 @@ function get_menu_items_by_registered_slug($menu_slug) {
     return $menu_items;
 
 }
+function uc_gutenberg_setup() {
+    // Add support for editor styles.
+    add_theme_support( 'editor-styles' );
+
+  // Enqueue editor styles.
+  add_editor_style( 'editor-styles.css' );
+  add_editor_style('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+  add_editor_style('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+}
+add_action( 'after_setup_theme', 'uc_gutenberg_setup' );

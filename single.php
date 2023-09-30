@@ -19,7 +19,7 @@
             <?php echo the_date("F j, Y"); ?>
         </p>
     </div>
-    <h3 class="font-garamond text-3xl sm:text-4xl md:text-5xl mb-8 !leading-tight font-medium"><?php the_title(); ?></h3>
+    <h1 class="font-garamond text-3xl sm:text-4xl md:text-5xl mb-8 !leading-tight font-medium"><?php the_title(); ?></h1>
     <p class="text-xl md:text-2xl opacity-50 mb-8 !leading-normal">
         <?php echo get_the_excerpt(); ?>
     </p>

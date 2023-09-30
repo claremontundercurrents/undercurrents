@@ -35,7 +35,7 @@ body {
     color: red;
   }
   
-  .content p, li {
+  .content p, .content li {
     line-height: 1.6;
     margin: 1.6em 0;
   }
