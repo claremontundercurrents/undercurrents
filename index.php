@@ -1,4 +1,5 @@
 <?php get_header();?>
+<?php if (!is_paged()): ?>
 <div class="max-w-7xl px-4 mx-auto lg:flex mt-16 relative">
     <div class="absolute -left-8 -top-40 w-48 pointer-events-none">
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
@@ -42,7 +43,13 @@
         </div>
     </div>
 </div>
+<?php else: ?>
+    <h1 class="text-4xl mb-4 text-center mt-16"><i class="font-garamond">Page:</i> <?php echo get_query_var('paged'); ?></h1>
+<?php endif; ?>
 <div class="max-w-2xl px-4 mx-auto mt-16">
 <?php if (have_posts()): while (have_posts()): the_post(); get_template_part("template_parts/post"); endwhile; endif; ?>
+<div class="mb-16 border-t pt-8 mt-8">
+    <?php the_posts_pagination()?>
+</div>
 </div>
 <?php get_footer();?>

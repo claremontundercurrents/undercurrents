@@ -24,5 +24,8 @@ if (is_author()) {
         <div class="opacity-50"><?php echo $description; ?></div>
     </div>
     <?php if (have_posts()): while (have_posts()): the_post(); get_template_part("template_parts/post"); endwhile; endif; ?>
+    <div class="mb-16 border-t pt-8 mt-8">
+        <?php the_posts_pagination()?>
+    </div>
 </div>
 <?php get_footer(); ?>

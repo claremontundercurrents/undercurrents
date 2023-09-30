@@ -167,3 +167,24 @@ body {
     height: 48px;
   }
 }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.page-numbers {
+  padding: 0 6px;
+  display: block;
+  text-align: center;
+  margin-right: 6px;
+  border-radius: 4px;
+}
+
+a.page-numbers {
+  background-color: rgba(0,0,0,0.05);
+}
+
+a.page-numbers:hover {
+  background-color: rgba(0,0,0,0.1);
+}
