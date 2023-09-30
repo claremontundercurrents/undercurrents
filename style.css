@@ -85,14 +85,25 @@ body {
     font-family: "Inter Tight", sans-serif;
   }
 
-.hero-text {
+.hero-text:not(.hero-text-light) {
     color: #999999;
 }
 
+.hero-text-light {
+  color: rgba(255,255,255,0.5);
+}
+
 .hero-text a {
-    color: #000;
     position: relative;
     display: inline-block;
+}
+
+.hero-text:not(.hero-text-light) a {
+  color: #000;
+}
+
+.hero-text-light a {
+  color: white;
 }
 
 .hero-text i {
