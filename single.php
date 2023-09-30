@@ -40,6 +40,16 @@
 </div>
 <div class="max-w-2xl mx-auto px-4 content content-drop font-garamond">
     <?php the_content(); ?>
+    <img src="<?php echo get_template_directory_uri() . "/img/endmark.svg" ?>" alt="" class="w-4 my-8 rounded-sm">
+</div>
+<div class="max-w-2xl mx-auto px-4 border-t">
+    <h2 class="font-garamond text-3xl sm:text-5xl italic mt-16 mb-8 sm:mb-12">Read more</h2>
+    <?php
+    $posts = get_posts(array("numberposts"=>3, "exclude"=>array(get_the_ID())));
+    foreach ($posts as $post) {
+        get_template_part("template_parts/post");
+    }
+    ?>
 </div>
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>
