@@ -47,11 +47,11 @@
             <img src="<?php echo get_template_directory_uri() . "/img/issue1.png" ?>" alt="" class="w-2/5 sm:w-1/2 flex-shrink- pr-4 relative py-4 block">
             <div class="w-3/5 sm:w-1/2 flex-shrink-0 text-white relative pr-4 py-8">
                 <p class="text-[10px] uppercase tracking-[1px] mb-2">
-                    <span class="font-bold">Issue 1</span> / Spring 2023
+                    <span class="font-bold"><?php echo get_theme_mod("uc-mag-issue") ?></span> / <?php echo get_theme_mod("uc-mag-season") ?>
                 </p>
-                <p class="text-2xl font-garamond font-medium mb-2">Setting the Standard</p>
-                <p class="opacity-75 text-xs mb-4">How Pomona workers won a historic $25 minimum wage; a new union in Claremont; Tony Hoang on organizing</p>
-                <a href="" class="bg-tred py-2 px-3 text-xs uppercase text-white rounded tracking-[1px] font-bold">Read issue 1</a>
+                <p class="text-2xl font-garamond font-medium mb-2"><?php echo get_theme_mod("uc-mag-title") ?></p>
+                <p class="opacity-75 text-xs mb-4"><?php echo get_theme_mod("uc-mag-descript") ?></p>
+                <a href="<?php echo get_theme_mod("uc-mag-cta-url") ?>" class="bg-tred py-2 px-3 text-xs uppercase text-white rounded tracking-[1px] font-bold"><?php echo get_theme_mod("uc-mag-cta-text") ?></a>
             </div>
         </div>
     </div>

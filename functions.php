@@ -62,3 +62,67 @@ function uc_gutenberg_setup() {
   add_editor_style('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 }
 add_action( 'after_setup_theme', 'uc_gutenberg_setup' );
+
+function uc_customizer_setup($wp_customize) {
+    $wp_customize->add_section('uc-header-sec', array(
+        'title' => 'Header and mag promo'
+    ));
+    $wp_customize->add_setting('uc-header-cta-text');
+    $wp_customize->add_control('uc-header-cta-text-control', array(
+        'label' => 'Header CTA text',
+        'type' => 'string',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-header-cta-text',
+    ));
+    $wp_customize->add_setting('uc-header-cta-link');
+    $wp_customize->add_control('uc-header-cta-link-control', array(
+        'label' => 'Header CTA link',
+        'type' => 'url',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-header-cta-link',
+    ));
+    $wp_customize->add_setting('uc-mag-issue');
+    $wp_customize->add_control('uc-mag-issue-control', array(
+        'label' => 'Mag issue text',
+        'type' => 'string',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-mag-issue',
+    ));
+    $wp_customize->add_setting('uc-mag-season');
+    $wp_customize->add_control('uc-mag-season-control', array(
+        'label' => 'Mag issue season',
+        'type' => 'string',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-mag-season',
+    ));
+    $wp_customize->add_setting('uc-mag-title');
+    $wp_customize->add_control('uc-mag-title-control', array(
+        'label' => 'Mag issue title',
+        'type' => 'string',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-mag-title',
+    ));
+    $wp_customize->add_setting('uc-mag-description');
+    $wp_customize->add_control('uc-mag-description-control', array(
+        'label' => 'Mag issue description',
+        'type' => 'string',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-mag-description',
+    ));
+    $wp_customize->add_setting('uc-mag-cta-text');
+    $wp_customize->add_control('uc-mag-cta-text-control', array(
+        'label' => 'Mag CTA text',
+        'type' => 'string',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-mag-cta-text',
+    ));
+    $wp_customize->add_setting('uc-mag-cta-url');
+    $wp_customize->add_control('uc-mag-cta-url-control', array(
+        'label' => 'Mag CTA url',
+        'type' => 'url',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-mag-cta-url',
+    ));
+}
+
+add_action('customize_register', 'uc_customizer_setup');

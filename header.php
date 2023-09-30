@@ -28,7 +28,7 @@ wp_head();
                     <?php
                 }
                 ?>
-                <a href="" class="ml-6 rounded font-bold tracking-[1px] text-white text-xs px-4 py-3 bg-tred uppercase hidden sm:block">Get Issue 1</a>
+                <a href="<?php echo get_theme_mod('uc-header-cta-link'); ?>" class="ml-6 rounded font-bold tracking-[1px] text-white text-xs px-4 py-3 bg-tred uppercase hidden sm:block"><?php echo get_theme_mod('uc-header-cta-text'); ?></a>
             </div>
         </div>
     </div>
