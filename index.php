@@ -3,18 +3,31 @@
     <div class="absolute -left-8 -top-40 w-48 pointer-events-none">
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
     </div>
-    <div class="lg:w-2/3">
+    <div class="lg:w-[60%] pr-4">
         <p class="font-garamond font-medium text-3xl sm:text-4xl md:text-[45px] !leading-tight hero-text">Undercurrents reports on <a><i>labor</i></a>, <a><i>Palestine liberation</i></a>, <a><i>prison abolition</i></a>, <a><i>tenants’ rights</i></a> and other community organizing at and around the Claremont Colleges.</p>
     </div>
-    <div class="lg:w-1/3 flex-shrink-0 flex items-center max-w-md mx-auto">
-        <img src="<?php echo get_template_directory_uri() . "/img/issue1.png" ?>" alt="" class="w-1/2 flex-shrink- pr-4">
-        <div class="w-1/2 flex-shrink-0">
+    <div class="lg:w-[40%] flex-shrink-0 flex items-center max-w-md mx-auto relative mt-8 lg:mt-0">
+        <div class="absolute top-0 left-1/4 w-3/4 bg-tdark h-full" id="issue-promo-back"></div>
+        <style>
+            #issue-promo-back:before {
+                content: "";
+                transform: skewX(-8deg) translateX(-50%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 25%;
+                height: 100%;
+                background-color: #111111;
+            }
+        </style>
+        <img src="<?php echo get_template_directory_uri() . "/img/issue1.png" ?>" alt="" class="w-2/5 sm:w-1/2 flex-shrink- pr-4 relative py-4 block">
+        <div class="w-3/5 sm:w-1/2 flex-shrink-0 text-white relative pr-4 py-8">
             <p class="text-[10px] uppercase tracking-[1px] mb-2">
                 <span class="font-bold">Issue 1</span> / Spring 2023
             </p>
             <p class="text-2xl font-garamond font-medium mb-2">Setting the Standard</p>
             <p class="opacity-75 text-xs mb-4">How Pomona workers won a historic $25 minimum wage; a new union in Claremont; Tony Hoang on organizing</p>
-            <a href="" class="bg-tred py-2 px-3 text-xs uppercase text-white rounded tracking-[1px] font-bold">Read PDF</a>
+            <a href="" class="bg-tred py-2 px-3 text-xs uppercase text-white rounded tracking-[1px] font-bold">Read issue 1</a>
         </div>
     </div>
 </div>

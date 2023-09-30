@@ -9,6 +9,7 @@ module.exports = {
         "colors": {
             "tred": "red",
             "tdarkred": "#D12229",
+            "tdark": "#111111",
         },
       },
     },
