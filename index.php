@@ -43,15 +43,15 @@
         </div>
     </div>
 </div>
-<div class="max-w-7xl px-4 mx-auto flex mt-16 pt-16">
-    <div class="w-2/3 pr-8">
+<div class="max-w-7xl px-4 mx-auto lg:flex mt-16 pt-16">
+    <div class="lg:w-2/3 lg:pr-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full lg:mx-0">
         <h2 class="font-garamond text-2xl font-semibold mb-12">Latest news</h2>
-        <div class="flex">
-            <div class="w-1/2 pr-8">
+        <div class="md:flex">
+            <div class="md:w-1/2 md:pr-8">
                 <?php
                 $latest_post = end(get_posts(array("numberposts" => 1, "category_name" => "news")));
                 ?>
-                <a class="" href="<?php echo get_the_permalink($latest_post) ?>">
+                <a class="block mb-16" href="<?php echo get_the_permalink($latest_post) ?>">
                     <?php echo get_the_post_thumbnail($latest_post, "full", array("class" => "w-full aspect-[1.25] object-cover block mb-8")) ?>
                     <div class="flex items-center mb-4 text-xs">
                         <?php
@@ -78,7 +78,7 @@
                     </p>
                 </a>
             </div>
-            <div class="w-1/2">
+            <div class="md:w-1/2">
                 <?php
                 $next_three_news = get_posts(array("numberposts" => 4, "category_name" => "news", "exclude" => array($latest_post->ID)));
                 foreach ($next_three_news as $three_post):
@@ -112,7 +112,7 @@
             </div>
         </div>
     </div>
-    <div class="w-1/3 pl-8 border-l">
+    <div class="lg:w-1/3 lg:pl-8 lg:border-l max-w-sm mx-auto lg:max-w-full lg:mx-0 pt-8 mt-8 border-t lg:border-t-0 lg:pt-0 lg:mt-0">
         <h2 class="font-garamond text-2xl font-semibold mb-12">Features and commentary</h2>
         <?php
         $commentary_posts = get_posts(array("numberposts" => 2, "category_name" => "commentary"));
