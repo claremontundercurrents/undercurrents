@@ -43,9 +43,6 @@
         </div>
     </div>
 </div>
-<?php else: ?>
-    <h1 class="text-4xl mb-4 text-center mt-16"><i class="font-garamond">Page:</i> <?php echo get_query_var('paged'); ?></h1>
-<?php endif; ?>
 <div class="max-w-7xl px-4 mx-auto flex mt-16 pt-16">
     <div class="w-2/3 pr-8">
         <h2 class="font-garamond text-2xl font-semibold mb-12">Latest news</h2>
@@ -150,9 +147,12 @@
         <?php endforeach; ?>
     </div>
 </div>
+<?php else: ?>
+    <h1 class="text-4xl mb-4 text-center mt-16"><i class="font-garamond">Page:</i> <?php echo get_query_var('paged'); ?></h1>
+<?php endif; ?>
 <div class="max-w-2xl px-4 mx-auto mt-16">
 <h2 class="font-garamond text-2xl font-semibold mb-12">More</h2>
-<?php if (have_posts()): while (have_posts()): the_post(); if (get_the_ID() != $latest_post->ID && !in_array(get_the_ID(), array_map(fn($post): int => $post->ID, $next_three_news))) { get_template_part("template_parts/post"); } endwhile; endif; ?>
+<?php if (have_posts()): while (have_posts()): the_post(); if (get_the_ID() != $latest_post->ID && !in_array(get_the_ID(), array_map(fn($post): int => $post->ID, $next_three_news)) && !in_array(get_the_ID(), array_map(fn($post):int => $post->ID, $commentary_posts))) { get_template_part("template_parts/post"); } endwhile; endif; ?>
 <div class="mb-16 border-t pt-8 mt-8">
     <?php the_posts_pagination()?>
 </div>
