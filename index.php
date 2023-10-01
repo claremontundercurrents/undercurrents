@@ -46,8 +46,113 @@
 <?php else: ?>
     <h1 class="text-4xl mb-4 text-center mt-16"><i class="font-garamond">Page:</i> <?php echo get_query_var('paged'); ?></h1>
 <?php endif; ?>
+<div class="max-w-7xl px-4 mx-auto flex mt-16 pt-16">
+    <div class="w-2/3 pr-8">
+        <h2 class="font-garamond text-2xl font-semibold mb-12">Latest news</h2>
+        <div class="flex">
+            <div class="w-1/2 pr-8">
+                <?php
+                $latest_post = end(get_posts(array("numberposts" => 1, "category_name" => "news")));
+                ?>
+                <a class="" href="<?php echo get_the_permalink($latest_post) ?>">
+                    <?php echo get_the_post_thumbnail($latest_post, "full", array("class" => "w-full aspect-[1.25] object-cover block mb-8")) ?>
+                    <div class="flex items-center mb-4 text-xs">
+                        <?php
+                        $tags = get_the_tags($latest_post);
+                        if ($tags) {
+                            foreach ($tags as $tag) {
+                                ?>
+                                <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase">
+                                    <?php echo $tag->name; ?>
+                                </p>
+                                <?php
+                            }
+                        }
+                        ?>
+                        <p class="font-medium opacity-50">
+                            <?php echo get_the_date("F j, Y", $latest_post); ?>
+                        </p>
+                    </div>
+                    <h3 class="font-garamond font-semibold text-2xl sm:text-[28px] mb-4 leading-tight sm:leading-[32px]">
+                        <?php echo get_the_title($latest_post); ?>
+                    </h3>
+                    <p class="opacity-50">
+                        <?php echo get_the_excerpt($latest_post); ?>
+                    </p>
+                </a>
+            </div>
+            <div class="w-1/2">
+                <?php
+                $next_three_news = get_posts(array("numberposts" => 4, "category_name" => "news", "exclude" => array($latest_post->ID)));
+                foreach ($next_three_news as $three_post):
+                ?>
+                    <a class="flex mb-8" href="<?php echo get_the_permalink($three_post) ?>">
+                        <div class="pr-4">
+                            <div class="flex items-center mb-4 text-xs">
+                                <?php
+                                $tags = get_the_tags($three_post);
+                                if ($tags) {
+                                    foreach ($tags as $tag) {
+                                        ?>
+                                        <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase">
+                                            <?php echo $tag->name; ?>
+                                        </p>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                                <p class="font-medium opacity-50">
+                                    <?php echo get_the_date("F j, Y", $three_post); ?>
+                                </p>
+                            </div>
+                            <h3 class="font-garamond text-xl leading-tight">
+                                <?php echo get_the_title($three_post); ?>
+                            </h3>
+                        </div>
+                        <?php echo get_the_post_thumbnail($three_post, "full", array("class" => "w-28 h-28 object-cover flex-shrink-0 ml-auto")) ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <div class="w-1/3 pl-8 border-l">
+        <h2 class="font-garamond text-2xl font-semibold mb-12">Features and commentary</h2>
+        <?php
+        $commentary_posts = get_posts(array("numberposts" => 2, "category_name" => "commentary"));
+        foreach ($commentary_posts as $commentary_post):
+        ?>
+            <a class="block mb-12" href="<?php echo get_the_permalink($commentary_post) ?>">
+                <?php echo get_the_post_thumbnail($commentary_post, "full", array("class" => "w-40 h-40 object-cover block mb-6")) ?>
+                <div class="flex items-center mb-4 text-xs">
+                    <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase">
+                        <?php
+                        $coauthors = get_coauthors($commentary_post->ID);
+                        $last = end($coauthors)->ID;
+                        foreach ($coauthors as $author) {
+                            echo $author->display_name;
+                            if ($author->ID != $last) {
+                                echo ", ";
+                            }
+                        }
+                        ?>
+                    </p>
+                    <p class="font-medium opacity-50">
+                        <?php echo get_the_date("F j, Y", $commentary_post); ?>
+                    </p>
+                </div>
+                <h3 class="font-garamond text-2xl font-semibold leading-[28px] mb-4">
+                    <?php echo get_the_title($commentary_post); ?>
+                </h3>
+                <p class="opacity-50 text-sm">
+                    <?php echo get_the_excerpt($commentary_post); ?>
+                </p>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</div>
 <div class="max-w-2xl px-4 mx-auto mt-16">
-<?php if (have_posts()): while (have_posts()): the_post(); get_template_part("template_parts/post"); endwhile; endif; ?>
+<h2 class="font-garamond text-2xl font-semibold mb-12">More</h2>
+<?php if (have_posts()): while (have_posts()): the_post(); if (get_the_ID() != $latest_post->ID && !in_array(get_the_ID(), array_map(fn($post): int => $post->ID, $next_three_news))) { get_template_part("template_parts/post"); } endwhile; endif; ?>
 <div class="mb-16 border-t pt-8 mt-8">
     <?php the_posts_pagination()?>
 </div>
