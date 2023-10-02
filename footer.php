@@ -50,7 +50,7 @@
                     <span class="font-bold"><?php echo get_theme_mod("uc-mag-issue") ?></span> / <?php echo get_theme_mod("uc-mag-season") ?>
                 </p>
                 <p class="text-2xl font-garamond font-medium mb-2"><?php echo get_theme_mod("uc-mag-title") ?></p>
-                <p class="opacity-75 text-xs mb-4"><?php echo get_theme_mod("uc-mag-descript") ?></p>
+                <p class="opacity-75 text-xs mb-4"><?php echo get_theme_mod("uc-mag-description") ?></p>
                 <a href="<?php echo get_theme_mod("uc-mag-cta-url") ?>" class="bg-tred py-2 px-3 text-xs uppercase text-white rounded tracking-[1px] font-bold"><?php echo get_theme_mod("uc-mag-cta-text") ?></a>
             </div>
         </div>
