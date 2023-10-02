@@ -32,13 +32,18 @@ wp_head();
             </div>
         </div>
     </div>
-    <div class="w-full flex items-center justify-center h-12">
-        <?php
-        $catmenu = get_menu_items_by_registered_slug("cats");
-        foreach ($catmenu as $item) {
-            ?>
-                <a href="<?php echo $item->url?>" class="mx-4 opacity-50 hover:opacity-100 text-sm"><?php echo $item->title ?></a>
+    <div class="w-full overflow-x-auto h-12">
+        <div class="flex items-center h-full">
             <?php
-        }
-        ?>
+            $catmenu = get_menu_items_by_registered_slug("cats");
+            $first = reset($catmenu)->title;
+            $last = end($catmenu)->title;
+            foreach ($catmenu as $item) {
+                ?>
+                    <a href="<?php echo $item->url?>" class="<?php if ($item->title == $first) {echo "ml-auto mr-4 pl-4";} else if ($item->title == $last) {echo "ml-4 mr-auto pr-4";} else {echo "mx-4";} ?> opacity-50 hover:opacity-100 text-sm flex-shrink-0"><?php echo $item->title ?></a>
+                <?php
+            }
+            ?>
+        </div>
+        
     </div>
