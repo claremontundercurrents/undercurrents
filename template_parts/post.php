@@ -3,15 +3,20 @@
     <div class="ml-6 sm:ml-8">
         <div class="flex items-center mb-4 text-xs">
             <?php
-            $tags = get_the_tags();
+            $category = reset(get_the_category());
+            if ($category->slug == "commentary") {
+                ?>
+                    <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase"><?php echo $category->name; ?></p>
+                <?php
+            } else {
+                $tags = get_the_tags();
             if ($tags) {
                 foreach ($tags as $tag) {
                     ?>
-                    <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase">
-                        <?php echo $tag->name; ?>
-                    </p>
+                    <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase"><?php echo $tag->name; ?></p>
                     <?php
                 }
+            }
             }
             ?>
             <p class="font-medium opacity-50">
