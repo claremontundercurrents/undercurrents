@@ -44,6 +44,7 @@
         ?>
     </div>
     <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block my-16") )?>
+    <figcaption class="text-center opacity-50 text-sm block -mt-12"><?php echo get_the_post_thumbnail_caption();?></figcaption>
 </div>
 <div class="max-w-2xl mx-auto px-4 content content-drop font-garamond">
     <?php the_content(); ?>
