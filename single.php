@@ -6,13 +6,20 @@
     </div>
     <div class="flex items-center mb-8">
         <?php
-        $tags = get_the_tags();
+        $category = reset(get_the_category());
+        if ($category->slug == "commentary") {
+            ?>
+                <a class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase" href="<?php echo get_category_link($category) ?>"><?php echo $category->name; ?></a>
+            <?php
+        } else {
+            $tags = get_the_tags();
         if ($tags) {
             foreach ($tags as $tag) {
                 ?>
                 <a class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase" href="<?php echo get_tag_link($tag) ?>"><?php echo $tag->name; ?></a>
                 <?php
             }
+        }
         }
         ?>
         <p class="font-medium opacity-50">
