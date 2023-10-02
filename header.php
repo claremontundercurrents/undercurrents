@@ -18,6 +18,7 @@ wp_head();
             </a>
         </div>
         <div class="max-w-7xl px-4 mx-auto flex items-center h-full relative z-30">
+            <button class="lg:hidden" id="uc-menu-open"><i class="fa-solid fa-bars"></i></button>
             <p class="font-garamond font-medium hidden lg:block">Documenting and amplifying 5C organizing</p>
             <div class="flex items-center h-full ml-auto">
                 <?php
@@ -45,5 +46,26 @@ wp_head();
             }
             ?>
         </div>
-        
     </div>
+    <div class="fixed h-full top-0 w-64 bg-white border-r z-30 pt-8 px-4 transition-all left-0 -ml-64" id="uc-menu">
+        <button id="uc-menu-close"><i class="fa-solid fa-xmark"></i></button>
+        <p class="font-garamond font-medium text-xl mt-8">Documenting and amplifying 5C organizing</p>
+        <div class="mt-8">
+            <?php
+            foreach ($topmenu as $item) {
+                ?>
+                    <a href="<?php echo $item->url?>" class="font-medium text-xl opacity-50 hover:opacity-100 font-light block my-2"><?php echo $item->title?></a>
+                <?php
+            }
+            ?>
+            <a href="<?php echo get_theme_mod('uc-header-cta-link'); ?>" class="mt-8 inline-block rounded font-bold tracking-[1px] text-white text-xs px-4 py-3 bg-tred uppercase"><?php echo get_theme_mod('uc-header-cta-text'); ?></a>
+        </div>
+    </div>
+    <script>
+const closeButton = document.getElementById("uc-menu-close");
+const menu = document.getElementById("uc-menu");
+const openButton =document.getElementById("uc-menu-open");
+
+closeButton.onclick = () => menu.classList.add("-ml-64");
+openButton.onclick = () => menu.classList.remove("-ml-64");
+    </script>
