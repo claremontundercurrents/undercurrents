@@ -1,0 +1,6 @@
+{
+    "apiVersion": 3,
+    "title": "UC dropcap",
+    "name": "uc/dropcap",
+    "editorScript": "file:./index.js"
+  }

@@ -126,3 +126,9 @@ function uc_customizer_setup($wp_customize) {
 }
 
 add_action('customize_register', 'uc_customizer_setup');
+
+function add_uc_blocks() {
+    wp_enqueue_script( "uc-dropcap-js", get_template_directory_uri() . "/build/blocks/uc-dropcap/index.js", array("wp-blocks", "wp-element", "wp-block-editor"));
+}
+
+add_action("init", "add_uc_blocks");

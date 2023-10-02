@@ -23,7 +23,7 @@ h1 {
     }
 }
 
-.is-root-container>p:first-child:first-letter {
+.is-root-container>p:first-child:first-letter, .content-drop>p:first-child:first-letter {
     font-size: 3.15em;
     line-height: 1;
     font-weight: 700;
