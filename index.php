@@ -1,7 +1,7 @@
 <?php get_header();?>
 <?php if (!is_paged()): ?>
 <div class="max-w-7xl px-4 mx-auto mt-16 mb-32 relative">
-    <div class="grid grid-cols-3 gap-x-6">
+    <div class="grid md:grid-cols-3 gap-x-6">
         <?php
         $featured_posts = get_posts(array("numberposts" => 3, "category_name" => "featured"));
         foreach ($featured_posts as $featured_post): ?>

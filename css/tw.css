@@ -1008,6 +1008,10 @@ video {
     max-width: 48rem;
   }
 
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:pr-8 {
     padding-right: 2rem;
   }
