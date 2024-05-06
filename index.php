@@ -1,5 +1,41 @@
 <?php get_header();?>
 <?php if (!is_paged()): ?>
+<div class="max-w-7xl px-4 mx-auto mt-16 mb-32 relative">
+    <div class="grid grid-cols-3 gap-x-6">
+        <?php
+        $featured_posts = get_posts(array("numberposts" => 3, "category_name" => "featured"));
+        foreach ($featured_posts as $featured_post): ?>
+        <a class="block mb-16" href="<?php echo get_the_permalink($featured_post) ?>">
+            <?php echo get_the_post_thumbnail($featured_post, "full", array("class" => "w-full aspect-[1.25] object-cover block mb-8")) ?>
+            <div class="flex items-center mb-4 text-xs">
+                <?php
+                $tags = get_the_tags($featured_post);
+                if ($tags) {
+                    foreach ($tags as $tag) {
+                        ?>
+                        <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase">
+                            <?php echo $tag->name; ?>
+                        </p>
+                        <?php
+                    }
+                }
+                ?>
+                <p class="font-medium opacity-50">
+                    <?php echo get_the_date("F j, Y", $featured_post); ?>
+                </p>
+            </div>
+            <h3 class="font-garamond font-semibold text-2xl sm:text-[28px] mb-4 leading-tight sm:leading-[32px]">
+                <?php echo get_the_title($featured_post); ?>
+            </h3>
+            <p class="opacity-50">
+                <?php echo get_the_excerpt($featured_post); ?>
+            </p>
+        </a>        
+        <?php
+        endforeach;
+        ?>
+    </div>
+</div>
 <div class="max-w-7xl px-4 mx-auto lg:flex mt-16 relative">
     <div class="absolute -left-8 -top-40 w-48 pointer-events-none">
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
