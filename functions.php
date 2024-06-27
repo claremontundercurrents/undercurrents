@@ -65,7 +65,14 @@ add_action( 'after_setup_theme', 'uc_gutenberg_setup' );
 
 function uc_customizer_setup($wp_customize) {
     $wp_customize->add_section('uc-header-sec', array(
-        'title' => 'Header and mag promo'
+        'title' => 'UC CUSTOM SETTINGS'
+    ));
+    $wp_customize->add_setting('uc-show-featured');
+    $wp_customize->add_control('uc-show-featured-control', array(
+        'label' => 'Show featured stories on homepage?',
+        'type' => 'checkbox',
+        'section' => 'uc-header-sec',
+        'settings' => 'uc-show-featured',
     ));
     $wp_customize->add_setting('uc-header-cta-text');
     $wp_customize->add_control('uc-header-cta-text-control', array(

@@ -1,5 +1,6 @@
 <?php get_header();?>
 <?php if (!is_paged()): ?>
+<?php if (get_theme_mod("uc-show-featured", false)): ?>
 <div class="max-w-7xl px-4 mx-auto mt-16 mb-32 relative">
     <div class="grid md:grid-cols-3 gap-x-6">
         <?php
@@ -36,6 +37,7 @@
         ?>
     </div>
 </div>
+<?php endif; ?>
 <div class="max-w-7xl px-4 mx-auto lg:flex mt-16 relative">
     <div class="absolute -left-8 -top-40 w-48 pointer-events-none">
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
