@@ -4,7 +4,7 @@
     <div class="absolute -left-8 -top-40 w-48 pointer-events-none">
         <img src="<?php echo get_template_directory_uri() . "/img/uc-background.svg" ?>" alt="" class="w-full">
     </div>
-    <div class="flex items-center mb-8">
+    <div class="flex items-center mb-8 flex-wrap">
         <?php
         $category = reset(get_the_category());
         if ($category->slug == "commentary") {

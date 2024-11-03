@@ -91,7 +91,7 @@
                 ?>
                 <a class="block mb-16" href="<?php echo get_the_permalink($latest_post) ?>">
                     <?php echo get_the_post_thumbnail($latest_post, "full", array("class" => "w-full aspect-[1.25] object-cover block mb-8")) ?>
-                    <div class="flex items-center mb-4 text-xs">
+                    <div class="flex items-center mb-4 text-xs flex-wrap">
                         <?php
                         $tags = get_the_tags($latest_post);
                         if ($tags) {
@@ -123,7 +123,7 @@
                 ?>
                     <a class="flex mb-8" href="<?php echo get_the_permalink($three_post) ?>">
                         <div class="pr-4">
-                            <div class="flex items-center mb-4 text-xs">
+                            <div class="flex items-center mb-4 text-xs flex-wrap">
                                 <?php
                                 $tags = get_the_tags($three_post);
                                 if ($tags) {
@@ -158,7 +158,7 @@
         ?>
             <a class="block mb-12" href="<?php echo get_the_permalink($commentary_post) ?>">
                 <?php echo get_the_post_thumbnail($commentary_post, "full", array("class" => "w-40 h-40 object-cover block mb-6")) ?>
-                <div class="flex items-center mb-4 text-xs">
+                <div class="flex items-center mb-4 text-xs flex-wrap">
                     <p class="font-bold text-tdarkred tracking-[1px] mr-2 uppercase">
                         <?php
                         $coauthors = get_coauthors($commentary_post->ID);

@@ -1,7 +1,7 @@
 <a class="flex mb-8 sm:mb-16" href="<?php the_permalink() ?>">
     <?php echo get_the_post_thumbnail(null, "full", array("class" => "w-28 h-28 h- sm:w-60 sm:h-48 object-cover flex-shrink-0")) ?>
     <div class="ml-6 sm:ml-8">
-        <div class="flex items-center mb-4 text-xs">
+        <div class="flex items-center mb-4 text-xs flex-wrap">
             <?php
             $category = reset(get_the_category());
             if ($category->slug == "commentary") {
