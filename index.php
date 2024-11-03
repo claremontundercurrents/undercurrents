@@ -151,7 +151,7 @@
         </div>
     </div>
     <div class="lg:w-1/3 lg:pl-8 lg:border-l max-w-sm mx-auto lg:max-w-full lg:mx-0 pt-8 mt-8 border-t lg:border-t-0 lg:pt-0 lg:mt-0">
-        <h2 class="font-garamond text-2xl font-semibold mb-12">Features and commentary</h2>
+        <h2 class="font-garamond text-2xl font-semibold mb-12">Commentary</h2>
         <?php
         $commentary_posts = get_posts(array("numberposts" => 2, "category_name" => "commentary"));
         foreach ($commentary_posts as $commentary_post):
